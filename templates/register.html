@@ -1,0 +1,289 @@
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>PhishDetection</title>
+
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="../static/css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="../static/css/responsive.css" rel="stylesheet" />
+  
+ <script language="javascript">
+function validate()
+{
+	if(document.form1.name.value=="")
+	{
+	alert("Enter the Name");
+	document.form1.name.focus();
+	return false;
+	}
+	
+	if(document.form1.mobile.value=="")
+	{
+	alert("Enter the Mobile No.");
+	document.form1.mobile.focus();
+	return false;
+	}
+	if(isNaN(document.form1.mobile.value))
+	{
+	alert("Invalid Mobile No.");
+	document.form1.mobile.select();
+	return false;
+	}
+	if(document.form1.mobile.value.length!=10)
+	{
+	alert("Mobile No. must be 10 digits!");
+	document.form1.mobile.select();
+	return false;
+	}
+	if(document.form1.email.value=="")
+	{
+	alert("Enter the Email");
+	document.form1.email.focus();
+	return false;
+	}
+	if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(document.form1.email.value))  
+	{
+	
+	}
+	else
+	{
+	alert("Invalid E-mail!");
+	document.form1.email.select();
+	return false;
+	}
+	if(document.form1.uname.value=="")
+	{
+	alert("Enter the Username");
+	document.form1.uname.focus();
+	return false;
+	}
+	if(document.form1.pass.value=="")
+	{
+	alert("Enter the Password");
+	document.form1.pass.focus();
+	return false;
+	}
+	if(document.form1.cpass.value=="")
+	{
+	alert("Enter the Confirm Password");
+	document.form1.cpass.focus();
+	return false;
+	}
+	
+return true;
+}
+</script>
+</head>
+
+<body class="sub_page">
+
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="/login">
+            <span>
+              PhishDetection
+            </span>
+          </a>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="s-1"> </span>
+            <span class="s-2"> </span>
+            <span class="s-3"> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex mx-auto flex-column flex-lg-row align-items-center">
+             
+            </div>
+            <div class="quote_btn-container ">
+              <a href="">
+                <img src="../static/images/call.png" alt="">
+                <span>
+                  Call : + 01 1234567890
+                </span>
+              </a>
+              
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+
+  <!-- about section -->
+
+  <section class="about_section ">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="img-box">
+            <img src="../static/images/ss2.png" alt="">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="detail-box">
+            <div class="heading_container">
+            </br>
+              <h2>
+                User Registration
+              </h2>
+            </div>
+			{% if msg=="success" %}
+			<span style="color:#009933">Registered Successfully</span>
+			<script>
+//Using setTimeout to execute a function after 5 seconds.
+setTimeout(function () {
+   //Redirect with JavaScript
+   window.location.href= '/login_user';
+}, 2000);
+</script>
+
+			{% endif %}
+			<form name="form1" method="post">
+			<p>Name
+             <input type="text" name="name" class="form-control" placeholder="">
+            </p>
+            <p>Mobile No.
+             <input type="text" name="mobile" maxlength="10" class="form-control" placeholder="">
+            </p>
+			<p>Email
+             <input type="email" name="email" class="form-control" placeholder="">
+            </p>
+			<p>Username
+             <input type="text" name="uname" class="form-control" placeholder="">
+            </p>
+			<p>Password
+             <input type="password" name="pass" class="form-control">
+            </p>
+			<p>Confirm Password
+             <input type="password" name="cpass" class="form-control" placeholder="">
+            </p>
+            <button class="btn bg-primary" style="background-color:#000066; color:#FFFFFF" type="submit" onClick="return validate()">Register</button>
+			
+			
+			<br>
+			
+			</form>
+			
+			
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end about section -->
+
+
+  <div class="footer_bg">
+
+    <!-- contact section -->
+    
+    <!-- end contact section -->
+
+
+
+    <!-- info section -->
+    <section class="info_section layout_padding2">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="info_logo">
+              <h3>
+                
+              </h3>
+              <p>
+               
+              </p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="info_links">
+              <h4>
+                BASIC LINKS
+              </h4>
+              <ul class="  ">
+                <li class=" active">
+                  <a class="" href="/register"> New User <span class="sr-only">(current)</span></a>                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="info_contact">
+              <h4>
+                CONTACT DETAILS
+              </h4>
+              <a href="">
+                <div class="img-box">
+                  <img src="../static/images/telephone-white.png" width="12px" alt="">
+                </div>
+                <p>
+                  +01 1234567890
+                </p>
+              </a>
+              <a href="">
+                <div class="img-box">
+                  <img src="../static/images/envelope-white.png" width="18px" alt="">
+                </div>
+                <p>
+                  PhishDetection@info.com
+                </p>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="info_form ">
+             
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- end info_section -->
+
+
+    <!-- footer section -->
+   <section class="container-fluid footer_section">
+      <div class="container">
+        <p>
+         PhishDetection
+          <a href="https://html.design/"></a>
+        </p>
+      </div>
+    </section>
+    <!-- footer section -->
+
+  </div>
+
+  <script type="text/javascript" src="../static/js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="../static/js/bootstrap.js"></script>
+  <script type="text/javascript" src="../static/js/custom.js"></script>
+
+
+</body>
+
+</html>
